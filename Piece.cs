@@ -35,19 +35,19 @@ public class Piece : MonoBehaviour
                 }
             }
         }
-        // Black Team Move
+        
         if (!isWhite || isKing)
         {
-            if (deltaMoveX == 1) // any x direction
+            if (deltaMoveX == 1) 
             {
-                if (deltaMoveY == -1) // negative y direction
+                if (deltaMoveY == -1) 
                     return true;
             }
-            else if (deltaMoveX == 2) // skip over piece
+            else if (deltaMoveX == 2)
             {
                 if (deltaMoveY == -2)
                 {
-                    Piece p = board[(x1 + x2) / 2, (y1 + y2) / 2]; // that is not the same color
+                    Piece p = board[(x1 + x2) / 2, (y1 + y2) / 2]; 
                     if (p != null && p.isWhite != isWhite)
                         return true;
                 }
@@ -60,10 +60,10 @@ public class Piece : MonoBehaviour
     // Double Jump
     public bool isForceToMove(Piece[,] board, int x, int y)
     {
-        // White Team
+
         if(isWhite || isKing)
         {
-            // Top Left
+
             if(x >= 2 && y <=5)
             {
                 Piece p = board[x - 1, y + 1];
